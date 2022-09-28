@@ -3,9 +3,14 @@
   border: 0%;
   padding: 0%;
 }
+h1 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #131313;
+}
 
 body {
   width: 100%;
+  background-color: #b5b5b5;
 }
 
 #title {
@@ -17,6 +22,7 @@ body {
 }
 
 .color {
+  margin-top: 20px;
   border: 1px solid black;
   display: inline-block;
   width: 20px;

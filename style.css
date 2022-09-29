@@ -71,3 +71,18 @@ body {
   background-color: white;
   border-color: black
 }
+
+#button-container {
+  width: 100%;
+  text-align: center;
+}
+
+#clear-board {
+  color: #dcdcdc;
+  margin-top: 20px;
+  height: 25px;
+  width: 50px;
+  border-radius: 15%;
+  background-color: #8c8c8c;
+  text-align: center;
+}

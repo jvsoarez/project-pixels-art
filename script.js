@@ -4,6 +4,7 @@ const colorBlack = document.querySelector('#colorBlack');
 const colorRed = document.querySelector('#colorRed');
 const colorBlue = document.querySelector('#colorBlue');
 const colorYellow = document.querySelector('#colorYellow');
+const botaoLimpar = document.querySelector('#clear-board');
 
 function insereSectionNaMain() {
   const novaSection = document.createElement('section');
@@ -31,8 +32,8 @@ for (let posicao = 0; posicao < elementosClasseColor.length; posicao += 1) {
   elementosClasseColor[posicao].addEventListener('click', (event) => {
     for (let posicao2 = 0; posicao2 < elementosClasseColor.length; posicao2 += 1) {
       elementosClasseColor[posicao2].classList.remove('selected');
-      event.target.classList.add('selected');
     }
+    event.target.classList.add('selected');
   });
 }
 
@@ -56,6 +57,14 @@ for (let posicao = 0; posicao < pixelsComClassePixel.length; posicao += 1) {
     trocarCoresVermelhoEamarelo(e);
   });
 }
+
+// Limpa a cor de todos os pixels
+
+botaoLimpar.addEventListener('click', () => {
+  for (let posicao = 0; posicao < pixelsComClassePixel.length; posicao += 1) {
+    pixelsComClassePixel[posicao].style.backgroundColor = 'white';
+  }
+});
 
 // Referências:
 // Método setAttribute -> https://www.educative.io/answers/how-to-add-an-id-to-element-in-javascript

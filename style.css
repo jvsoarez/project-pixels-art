@@ -3,8 +3,9 @@
   border: 0%;
   padding: 0%;
 }
+
 h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   color: #131313;
 }
 
@@ -69,7 +70,7 @@ body {
   border-style: solid;
   border-width: 1px;
   background-color: white;
-  border-color: black
+  border-color: black;
 }
 
 #button-container {
@@ -78,7 +79,7 @@ body {
 }
 
 #clear-board {
-  color: #dcdcdc;
+  color: gainsboro;
   margin-top: 20px;
   height: 25px;
   width: 50px;

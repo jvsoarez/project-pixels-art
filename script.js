@@ -16,15 +16,20 @@ insereSectionNaMain();
 
 const sectionQuadroPixels = document.querySelector('#pixel-board');
 
-function insereDivsDoQuadroDePixelNaSection() {
-  for (let primeiraPosição = 1; primeiraPosição <= 25; primeiraPosição += 1) {
-    const criaTodasAsDivs = document.createElement('div');
-    criaTodasAsDivs.setAttribute('class', 'pixel');
-    sectionQuadroPixels.appendChild(criaTodasAsDivs);
+function insereDivsDoQuadroDePixelNaSection(num) {
+  for (let primeiraPosição = 1; primeiraPosição <= num; primeiraPosição += 1) {
+    const criaLinhaDivs = document.createElement('div');
+    criaLinhaDivs.setAttribute('class', 'pixel-line');
+    sectionQuadroPixels.appendChild(criaLinhaDivs);
+    for (let posicao2 = 1; posicao2 <= num; posicao2 += 1) {
+      const criaColunaDivs = document.createElement('div');
+      criaColunaDivs.setAttribute('class', 'pixel');
+      criaLinhaDivs.appendChild(criaColunaDivs);
+    }
   }
 }
 
-insereDivsDoQuadroDePixelNaSection();
+insereDivsDoQuadroDePixelNaSection(7);
 
 // Troca classe "selected" para a paleta clicada
 

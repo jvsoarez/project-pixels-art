@@ -62,13 +62,14 @@ body {
 
 #button-container {
   width: 100%;
+  display: block;
   text-align: center;
 }
 
 #clear-board {
   color: gainsboro;
   margin-top: 20px;
-  height: 25px;
+  height: 20px;
   width: 50px;
   border-radius: 15%;
   background-color: #8c8c8c;
@@ -79,3 +80,29 @@ body {
   display: flex;
   justify-content: center;
 }
+
+label {
+  display: inline-block;
+}
+
+#text-input {
+  margin-top: 10px;
+}
+
+#generate-board {
+  color: gainsboro;
+  margin-top: 20px;
+  height: 20px;
+  width: 50px;
+  border-radius: 15%;
+  background-color: #8c8c8c;
+  text-align: center;
+}
+
+#board-size {
+  width: 5%;
+  height: 12%;
+}
+
+/* Referências: 
+Centralizar div -> https://www.devmedia.com.br/como-centralizar-divs-em-html-e-css/37568

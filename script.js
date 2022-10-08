@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const main = document.querySelector('main');
 const elementosClasseColor = document.querySelectorAll('.color');
 const colorBlack = document.querySelector('#colorBlack');
@@ -30,11 +31,14 @@ function trocarCoresVermelhoEamarelo(e) {
   if (colorYellow.className.includes('selected')) e.target.style.backgroundColor = '#ffb703';
 }
 
-// Cria board com valor inicial de 5x5 (ajustável pelo valor do input) e colore os pixels.
+// Cria board com valor inicial de 5x5 (ajustável pelo valor do input), com tamanho minimo e maximo definidos
+// e colore os pixels.
 
 const sectionQuadroPixels = document.querySelector('#pixel-board');
 
 function insereDivsDoQuadroDePixelNaSection(num) {
+  if (num < 5) num = 5;
+  if (num > 50) num = 50;
   for (let primeiraPosição = 1; primeiraPosição <= num; primeiraPosição += 1) {
     const criaLinhaDivs = document.createElement('div');
     criaLinhaDivs.setAttribute('class', 'pixel-line');
@@ -53,13 +57,39 @@ function insereDivsDoQuadroDePixelNaSection(num) {
 
 insereDivsDoQuadroDePixelNaSection(5);
 
+// limita números mínimo e máximo do tamanho do board.
+
+// function limitaMinDoBoard() {
+//   const todasAsDivsDasLinhas = document.querySelectorAll('.pixel-line');
+//   if (inputQueDefinePixels.value < 5) {
+//     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
+//       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
+//     }
+//     insereDivsDoQuadroDePixelNaSection(5);
+//     inputQueDefinePixels.value = '';
+//   }
+// }
+
+// function limitaMaxDoBoard() {
+//   const todasAsDivsDasLinhas = document.querySelectorAll('.pixel-line');
+//   if (inputQueDefinePixels.value > 50) {
+//     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
+//       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
+//     }
+//     insereDivsDoQuadroDePixelNaSection(50);
+//     inputQueDefinePixels.value = '';
+//   }
+// }
+
 // Substitui board 5x5 padrão pelo tamanho definido pelo usuário, no input.
 
+// eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 botaoVqv.addEventListener('click', () => {
   const todasAsDivsDasLinhas = document.querySelectorAll('.pixel-line');
   if (!inputQueDefinePixels.value || inputQueDefinePixels.value <= 0) {
     alert('Board inválido!');
-  } else {
+  }
+  if (inputQueDefinePixels.value || inputQueDefinePixels.value > 0) {
     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
     }

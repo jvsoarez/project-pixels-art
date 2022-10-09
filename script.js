@@ -2,9 +2,9 @@
 const main = document.querySelector('main');
 const elementosClasseColor = document.querySelectorAll('.color');
 const colorBlack = document.querySelector('#colorBlack');
-const colorRed = document.querySelector('#colorRed');
-const colorBlue = document.querySelector('#colorBlue');
-const colorYellow = document.querySelector('#colorYellow');
+const color2 = document.querySelector('#color2');
+const color3 = document.querySelector('#color3');
+const color4 = document.querySelector('#color4');
 const botaoLimpar = document.querySelector('#clear-board');
 const inputQueDefinePixels = document.querySelector('#board-size');
 const botaoVqv = document.querySelector('#generate-board');
@@ -19,16 +19,37 @@ function insereSectionNaMain() {
 
 insereSectionNaMain();
 
+// Função que gera hash de cor aleatória
+
+function geraCor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Função que troca cor original da paleta para cor aleatória gerada pela função geraCor;
+
+function trocaCorDaPaletaParaAleatoria() {
+  color2.style.backgroundColor = geraCor();
+  color3.style.backgroundColor = geraCor();
+  color4.style.backgroundColor = geraCor();
+}
+
+trocaCorDaPaletaParaAleatoria();
+
 // funções que trocam cores dos pixels para cor da paleta selecionada
 
 function trocarCoresPretoEazul(e) {
   if (colorBlack.className.includes('selected')) e.target.style.backgroundColor = 'black';
-  if (colorRed.className.includes('selected')) e.target.style.backgroundColor = '#9a031e';
+  if (color2.className.includes('selected')) e.target.style.backgroundColor = color2.style.backgroundColor;
 }
 
 function trocarCoresVermelhoEamarelo(e) {
-  if (colorBlue.className.includes('selected')) e.target.style.backgroundColor = '#118ab2';
-  if (colorYellow.className.includes('selected')) e.target.style.backgroundColor = '#ffb703';
+  if (color3.className.includes('selected')) e.target.style.backgroundColor = color3.style.backgroundColor;
+  if (color4.className.includes('selected')) e.target.style.backgroundColor = color4.style.backgroundColor;
 }
 
 // Cria board com valor inicial de 5x5 (ajustável pelo valor do input), com tamanho minimo e maximo definidos
@@ -56,30 +77,6 @@ function insereDivsDoQuadroDePixelNaSection(num) {
 }
 
 insereDivsDoQuadroDePixelNaSection(5);
-
-// limita números mínimo e máximo do tamanho do board.
-
-// function limitaMinDoBoard() {
-//   const todasAsDivsDasLinhas = document.querySelectorAll('.pixel-line');
-//   if (inputQueDefinePixels.value < 5) {
-//     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
-//       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
-//     }
-//     insereDivsDoQuadroDePixelNaSection(5);
-//     inputQueDefinePixels.value = '';
-//   }
-// }
-
-// function limitaMaxDoBoard() {
-//   const todasAsDivsDasLinhas = document.querySelectorAll('.pixel-line');
-//   if (inputQueDefinePixels.value > 50) {
-//     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
-//       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
-//     }
-//     insereDivsDoQuadroDePixelNaSection(50);
-//     inputQueDefinePixels.value = '';
-//   }
-// }
 
 // Substitui board 5x5 padrão pelo tamanho definido pelo usuário, no input.
 

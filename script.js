@@ -60,12 +60,10 @@ function trocarCores3e4(e) {
   }
 }
 
-// Cria board com valor inicial de 5x5 (ajustável pelo valor do input), com tamanho minimo e maximo definidos
-// e colore os pixels.
+// limpa cor do pixel clicado
 
 function limpaPixel() {
   const pixelsComClassePixel = document.getElementsByClassName('pixel');
-  console.log(pixelsComClassePixel);
   for (let posicao = 0; posicao < pixelsComClassePixel.length; posicao += 1) {
     pixelsComClassePixel[posicao].addEventListener('dblclick', () => {
       console.log(pixelsComClassePixel);
@@ -75,6 +73,9 @@ function limpaPixel() {
     });
   }
 }
+
+// Cria board com valor inicial de 5x5 (ajustável pelo valor do input), com tamanho minimo e maximo definidos
+// e colore os pixels.
 
 const sectionQuadroPixels = document.querySelector('#pixel-board');
 
@@ -108,7 +109,7 @@ botaoVqv.addEventListener('click', () => {
   if (!inputQueDefinePixels.value || inputQueDefinePixels.value <= 0) {
     alert('Board inválido!');
   }
-  if (inputQueDefinePixels.value || inputQueDefinePixels.value > 0) {
+  if (inputQueDefinePixels.value > 0) {
     for (let posicao = 0; posicao < todasAsDivsDasLinhas.length; posicao += 1) {
       sectionQuadroPixels.removeChild(todasAsDivsDasLinhas[posicao]);
     }
@@ -132,15 +133,10 @@ for (let posicao = 0; posicao < elementosClasseColor.length; posicao += 1) {
 
 botaoLimpar.addEventListener('click', () => {
   const pixelsComClassePixel = document.getElementsByClassName('pixel');
-  console.log(pixelsComClassePixel);
   for (let posicao = 0; posicao < pixelsComClassePixel.length; posicao += 1) {
     pixelsComClassePixel[posicao].style.backgroundColor = 'white';
   }
 });
-
-// limpa cor do pixel clicado
-
-// console.log(pixelsComClassePixel);
 
 // Referências:
 // Método setAttribute -> https://www.educative.io/answers/how-to-add-an-id-to-element-in-javascript

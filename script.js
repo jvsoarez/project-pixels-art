@@ -30,7 +30,7 @@ function geraCor() {
   return color;
 }
 
-// Função que troca cor original da paleta para cor aleatória gerada pela função geraCor;
+// Função que troca cor original da paleta para cor aleatória, gerada pela função geraCor;
 
 function trocaCorDaPaletaParaAleatoria() {
   color2.style.backgroundColor = geraCor();

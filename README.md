@@ -32,6 +32,6 @@ In this project i practice the use of the conventional commits to version contro
 11. Limit the minimum and maximum board size ✔️
 12. Make the palette colors randomly generated when the page loads ✔️
 
-🔗 Deploy [hehe](https://jvsoarez.github.io/project-pixels-art/)
+🔗 Deploy [here](https://jvsoarez.github.io/project-pixels-art/)
 
 🙏🏽 Thanks for viewing this repository!
